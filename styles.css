@@ -69,7 +69,6 @@ p{
 }
 
 .doc-link{
-.doc-link{
   display:block;
   width:100%;
   margin-top:40px;
@@ -83,8 +82,8 @@ p{
 }
 
 .doc-link:hover{
-  border-color:#cfcfcf;
-  transform:translateY(-2px);
+  border-color:#d8d8d8;
+  background:#fafafa;
 }
 
 .doc-title{
