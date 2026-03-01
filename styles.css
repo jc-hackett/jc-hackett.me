@@ -50,21 +50,17 @@ p{
 /* Mobile adjustments */
 @media (max-width: 640px){
 
-  .wrapper{
-    padding:28px 16px 48px;
+  .doc-link{
+    padding:14px 16px;
+    margin-top:24px;
   }
 
-  .card{
-    max-width:520px;
-    padding:28px 22px 32px;
+  .doc-title{
+    font-size:0.98rem;
   }
 
-  h1{
-    font-size:1.45rem;
-  }
-
-  p{
-    font-size:1.05rem;
+  .doc-sub{
+    font-size:0.82rem;
   }
 }
 
