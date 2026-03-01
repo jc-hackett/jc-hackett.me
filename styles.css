@@ -2,17 +2,6 @@
   --text:#111;
   --muted:#666;
   --border:#e8e8e8;
-
-  /* horizontal padding inside the card (desktop/mobile) */
-  --pad: 48px;
-  --pad-mobile: 22px;
-
-  /* link (document) colors */
-  --doc-bg: #f2f7fd;
-  --doc-border: #d7e6f5;
-  --doc-bg-hover: #e9f2fb;
-  --doc-border-hover: #c8def2;
-  --doc-sub: #5f6f7c;
 }
 
 body{
@@ -22,23 +11,23 @@ body{
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   line-height:1.75;
   text-rendering:optimizeLegibility;
+  -webkit-text-size-adjust:100%;
 }
 
 .wrapper{
   min-height:100vh;
   display:flex;
   justify-content:center;
-  padding:48px 0 64px;
+  padding:48px 18px 64px;
 }
 
-/* Card */
 .card{
-  width:min(640px, calc(100% - 36px)); /* keeps even 18px gutters */
+  width:100%;
+  max-width:640px;          /* narrower = more readable */
   border:1px solid var(--border);
-  border-radius:14px;
+  padding:56px 48px 60px;
   box-sizing:border-box;
-
-  padding:56px var(--pad) 60px;
+  border-radius:14px;
 }
 
 /* Type */
@@ -57,19 +46,18 @@ h1{
 
 p{
   font-size:1.06rem;
-  margin:0 0 22px;
+  margin:0 0 24px;          /* consistent vertical rhythm */
 }
 
-/* Notion-style “document link” */
+/* Notion-like “document” link */
 .doc-link{
   display:flex;
   align-items:baseline;
   gap:10px;
 
-  /* match text column */
   width:100%;
-  max-width: 520px;
-  margin: 24px auto 0;     /* centers it and keeps equal whitespace */
+  max-width:520px;
+  margin:32px auto 0;       /* consistent rhythm + centered */
 
   padding:14px 16px;
   border:1px solid #d7e6f5;
@@ -77,12 +65,14 @@ p{
   background:#f2f7fd;
 
   text-decoration:none;
-  color:#111;
+  color:var(--text);
+
+  transition: background .15s ease, border-color .15s ease; /* subtle hover */
 }
 
 .doc-link:hover{
-  background:#e9f2fb;
-  border-color:#c8def2;
+  background:#eef5fc;
+  border-color:#cddff1;
 }
 
 .doc-title{
@@ -97,30 +87,34 @@ p{
   line-height:1.2;
 }
 
+/* Mobile adjustments */
 @media (max-width: 640px){
-  .doc-link{
-    max-width: 100%;
-    margin-top: 18px;
-    padding:12px 14px;
+
+  .wrapper{
+    padding:28px 16px 48px;
   }
-  .doc-sub{
-    font-size:0.84rem;
+
+  .card{
+    max-width:520px;
+    padding:28px 22px 32px;
+    border-radius:12px;
   }
-}
+
   h1{
     font-size:1.45rem;
   }
 
   p{
-    font-size:1.05rem;
+    font-size:1.08rem;      /* improved mobile readability */
   }
 
-  .doc-link > *{
-    padding-left: var(--pad-mobile);
-    padding-right: var(--pad-mobile);
+  .doc-link{
+    max-width:100%;
+    margin-top:32px;
+    padding:12px 14px;
   }
 
   .doc-sub{
-    font-size:0.85rem;
+    font-size:0.84rem;
   }
 }
