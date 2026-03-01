@@ -4,9 +4,12 @@
 <div class="wrapper">
   <div class="card">
     <h1>Jeremiah Hackett, LCSW</h1>
-    <p class="sub">Clinical Social Worker</p>
+    <p class="sub">Clinically Informed Coaching</p>
 
-I work with men in their twenties and thirties. My clients are typically creators and developers looking to harness their imagination and increase their focus.
-<a href="/about/" class="doc-link">
-  <span class="doc-title">About Me</span>
-</a>
+I work with professionals in their twenties and thirties. They're mostly creatives and developers looking to harness their imagination and increase their producivity. For many, this requires significant behavioral change.
+
+Take a look at the top ten books that have influenced my work. <br>
+Annotated Bibliography
+
+Drop me an email: <br>
+jeremiah at gmail dot com.

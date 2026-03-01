@@ -2,16 +2,14 @@
   --text:#111;
   --muted:#666;
   --border:#e8e8e8;
-  --blue-bg:#eaf3fb;
-  --blue-border:#cfdfee;
-  --blue-hover:#e1edf8;
-  --blue-hover-border:#bcd4ea;
+  --bg:#fff;
 }
 
-/* Base */
+*{ box-sizing:border-box; }
+
 body{
   margin:0;
-  background:#fff;
+  background:var(--bg);
   color:var(--text);
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   line-height:1.75;
@@ -19,25 +17,25 @@ body{
   -webkit-text-size-adjust:100%;
 }
 
-/* Layout wrapper */
+/* Centered page container */
 .wrapper{
   min-height:100vh;
   display:flex;
   justify-content:center;
-  padding:48px 16px 64px; /* equal left/right */
+  padding:48px 16px 64px;   /* equal left/right whitespace */
 }
 
 /* Main card */
 .card{
   width:100%;
   max-width:640px;
-  padding:56px 32px 56px; /* equal left/right */
+  padding:56px 32px 56px;   /* equal left/right padding */
   border:1px solid var(--border);
   border-radius:14px;
-  box-sizing:border-box;
+  background:#fff;
 }
 
-/* Typography */
+/* Type */
 h1{
   font-weight:600;
   font-size:1.75rem;
@@ -56,50 +54,14 @@ p{
   margin:0 0 24px;
 }
 
-/* About document block */
-.doc-link{
-  display:block;
-  width:100%;
-  margin-top:32px;
-
-  padding:18px 20px;  /* equal whitespace left/right */
-  border:1px solid var(--blue-border);
-  border-radius:12px;
-  background:var(--blue-bg);
-
-  text-decoration:none;
-  color:var(--text);
-  box-sizing:border-box;
-
-  transition:background .15s ease, border-color .15s ease;
-}
-
-.doc-link:hover{
-  background:var(--blue-hover);
-  border-color:var(--blue-hover-border);
-}
-
-.doc-title{
-  font-weight:600;
-  font-size:1rem;
-  margin:0 0 6px;
-}
-
-.doc-sub{
-  font-size:0.9rem;
-  color:#5f6f7c;
-  margin:0;
-}
-
-/* Mobile adjustments */
+/* Mobile */
 @media (max-width:640px){
-
   .wrapper{
     padding:28px 16px 48px;
   }
 
   .card{
-    padding:28px 22px 36px;  /* equal left/right */
+    padding:28px 22px 36px;
     border-radius:12px;
   }
 
@@ -109,13 +71,5 @@ p{
 
   p{
     font-size:1.08rem;
-  }
-
-  .doc-link{
-    padding:16px 18px;
-  }
-
-  .doc-sub{
-    font-size:0.86rem;
   }
 }
