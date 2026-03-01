@@ -4,7 +4,7 @@
 <div class="wrapper">
   <div class="card">
     <h1>Jeremiah Hackett, LCSW</h1>
-    <p class="sub">Clinical Social Worker — Maine</p>
+    <p class="sub">Clinical Social Worker</p>
 
 I work with men between the ages of twenty and forty who are confronting life transitions, behavior change, anxiety, or depression in its more medication-resistant form.
 
