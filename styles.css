@@ -66,29 +66,23 @@ p{
   align-items:baseline;
   gap:10px;
 
+  /* match text column */
   width:100%;
-  margin-top:22px;
+  max-width: 520px;
+  margin: 24px auto 0;     /* centers it and keeps equal whitespace */
 
-  /* border spans full card width */
-  padding:14px 0;
-
-  border:1px solid var(--doc-border);
-  border-radius:8px;
-  background:var(--doc-bg);
+  padding:14px 16px;
+  border:1px solid #d7e6f5;
+  border-radius:10px;
+  background:#f2f7fd;
 
   text-decoration:none;
-  color:var(--text);
+  color:#111;
 }
 
 .doc-link:hover{
-  background:var(--doc-bg-hover);
-  border-color:var(--doc-border-hover);
-}
-
-/* Align inner text to the same left/right edges as paragraphs */
-.doc-link > *{
-  padding-left: var(--pad);
-  padding-right: var(--pad);
+  background:#e9f2fb;
+  border-color:#c8def2;
 }
 
 .doc-title{
@@ -98,19 +92,21 @@ p{
 }
 
 .doc-sub{
-  font-size:0.9rem;
-  color:var(--doc-sub);
+  font-size:0.88rem;
+  color:#5f6f7c;
   line-height:1.2;
 }
 
-/* Mobile */
 @media (max-width: 640px){
-  .card{
-    width:calc(100% - 32px); /* even 16px gutters */
-    padding:28px var(--pad-mobile) 32px;
-    border-radius:14px;
+  .doc-link{
+    max-width: 100%;
+    margin-top: 18px;
+    padding:12px 14px;
   }
-
+  .doc-sub{
+    font-size:0.84rem;
+  }
+}
   h1{
     font-size:1.45rem;
   }
