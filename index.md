@@ -6,7 +6,10 @@
     <h1>Jeremiah Hackett, LCSW</h1>
     <p class="sub">Clinical Coach</p>
 
-I work with men in their twenties and thirties. My clients are typically creatives and developers looking to harness their imagination without decreasing their focuus
+I work with men in their twenties and thirties. My clients are typically creatives and developers looking to harness their imagination without decreasing their focuus.
+
+Here's my brief annotated bibliography: <br>
+Bibliography
 
 Drop me an email: <br>
 jeremiah at gmail dot com.
