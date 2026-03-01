@@ -52,16 +52,19 @@ p{
 /* Notion-like “document” link */
 .doc-link{
   display:block;
-  width:100%;
   margin-top:24px;
 
-  padding:14px 0;              /* no left/right padding */
+  /* make it follow the same column as text */
+  width:100%;
+  box-sizing:border-box;
+
+  padding:16px 18px;
   border:1px solid #cfdfee;
   border-radius:12px;
   background:#eaf3fb;
 
   text-decoration:none;
-  color:inherit;
+  color:var(--text);
 
   transition: background .15s ease, border-color .15s ease;
 }
@@ -71,23 +74,29 @@ p{
   border-color:#bcd4ea;
 }
 
-.doc-link .doc-title,
-.doc-link .doc-sub{
-  padding-left:22px;           /* MATCH .card side padding */
-  padding-right:22px;          /* MATCH .card side padding */
-}
-
 .doc-title{
   font-weight:600;
   font-size:1rem;
-  display:inline-block;
-  margin-right:10px;
+  margin:0 0 6px;
 }
 
 .doc-sub{
-  font-size:0.88rem;
+  font-size:0.9rem;
   color:#5f6f7c;
-  display:inline-block;
+  margin:0;
+}
+
+/* Mobile: slightly tighter */
+@media (max-width:640px){
+  .doc-link{
+    padding:14px 16px;
+  }
+  .doc-title{
+    margin-bottom:4px;
+  }
+  .doc-sub{
+    font-size:0.86rem;
+  }
 }
 /* Mobile adjustments */
 @media (max-width: 640px){
