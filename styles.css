@@ -24,7 +24,7 @@ body{
   width:100%;
   max-width:640px;          /* narrower = more readable */
   border:1px solid var(--border);
-  padding:56px 48px 60px;
+  padding:30px 48px 30px;
   box-sizing:border-box;
   border-radius:14px;
 }
