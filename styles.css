@@ -67,3 +67,33 @@ p{
     font-size:1.05rem;
   }
 }
+
+.doc-link{
+.doc-link{
+  display:block;
+  width:100%;
+  margin-top:40px;
+  padding:20px 22px;
+  border:1px solid #e5e5e5;
+  border-radius:10px;
+  text-decoration:none;
+  color:#111;
+  transition:all .15s ease;
+  background:#fff;
+}
+
+.doc-link:hover{
+  border-color:#cfcfcf;
+  transform:translateY(-2px);
+}
+
+.doc-title{
+  font-weight:600;
+  font-size:1.05rem;
+  margin-bottom:4px;
+}
+
+.doc-sub{
+  font-size:0.9rem;
+  color:#666;
+}
