@@ -7,6 +7,5 @@
     <p class="sub">Clinical Social Worker</p>
 
 I work with men in their twenties and thirties. My clients are typically creators and developers looking to harness their imagination and increase their focus.
-<a href="/about/" class="doc-link">
-  <span class="doc-title">About Me</span>
-</a>
+
+Drop me an email: jeremiah at gmail dot com.
