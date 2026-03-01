@@ -14,6 +14,5 @@ I draw from motivational interviewing, cognitive-behavioral, mindfulness, and na
 
 
 <a href="/about/" class="doc-link">
-  <span class="doc-title">About</span>
-  <span class="doc-sub">Background and approach</span>
+  <span class="doc-title">About Me</span>
 </a>
