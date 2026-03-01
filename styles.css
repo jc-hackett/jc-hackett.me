@@ -71,21 +71,31 @@ p{
 .doc-link{
   display:block;
   width:100%;
-  margin-top:40px;
-  padding:20px 22px;
-  border:1px solid #e5e5e5;
+  margin-top:32px;
+  padding:18px 20px;
+  border:1px solid #d6e6f5;
   border-radius:10px;
   text-decoration:none;
   color:#111;
-  transition:all .15s ease;
-  background:#fff;
+  background:#f3f8fc; /* light blue */
+  transition:background .15s ease, border-color .15s ease;
 }
 
 .doc-link:hover{
-  border-color:#d8d8d8;
-  background:#fafafa;
+  background:#eaf3fb;
+  border-color:#c8dff2;
 }
 
+.doc-title{
+  font-weight:600;
+  font-size:1rem;
+  margin-bottom:2px;
+}
+
+.doc-sub{
+  font-size:0.88rem;
+  color:#5f6f7c;
+}
 .doc-title{
   font-weight:600;
   font-size:1.05rem;
