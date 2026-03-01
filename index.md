@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/styles.css">
+
 ---
 title: Jeremiah Hackett, LCSW
 ---
