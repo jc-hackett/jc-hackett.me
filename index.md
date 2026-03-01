@@ -4,9 +4,9 @@
 <div class="wrapper">
   <div class="card">
     <h1>Jeremiah Hackett, LCSW</h1>
-    <p class="sub">Clinical Social Worker</p>
+    <p class="sub">Clinical Coach</p>
 
-I work with men in their twenties and thirties. My clients are typically creators and developers looking to harness their imagination and increase their focus.
+I work with men in their twenties and thirties. My clients are typically creatives and developers looking to harness their imagination without decreasing their focuus
 
 Drop me an email: <br>
 jeremiah at gmail dot com.
