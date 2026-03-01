@@ -17,7 +17,7 @@ body{
   min-height:100vh;
   display:flex;
   justify-content:center;
-  padding:30px 18px 30px;
+  padding:48px 0 64px;
 }
 
 .card{
@@ -27,6 +27,7 @@ body{
   padding:30px 48px 30px;
   box-sizing:border-box;
   border-radius:14px;
+    margin:0 18px;
 }
 
 h1{
@@ -81,12 +82,32 @@ p{
   line-height:1.2;
 }
 
-/* Mobile: keep it compact */
+/* Mobile adjustments */
 @media (max-width: 640px){
-  .doc-link{
-    padding:12px 12px;
-    margin-top:18px;
+
+  .wrapper{
+    padding:28px 0 48px;
   }
+
+  .card{
+    width:92%;
+    margin:0 auto;
+    padding:28px 22px 32px;
+  }
+
+  h1{
+    font-size:1.45rem;
+  }
+
+  p{
+    font-size:1.05rem;
+  }
+
+  .doc-link{
+    padding:12px 14px;
+    margin-top:24px;
+  }
+
   .doc-sub{
     font-size:0.85rem;
   }
