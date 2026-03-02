@@ -1,17 +1,11 @@
-*Clinically Informed Coaching*
+*Clinically Informed Consulting*
 
-<br>
-I work with professionals in their twenties and thirties. They're mostly creatives and developers looking to harness their imagination without compromising productivity. 
-<br><br>
-For many, this requires a combination of skills-practice, behavior change, and cognitive schema shifts. 
-<br><br>
-For many, this requires exploring the past and cultivating a renewed sense of self.
-<br><br>
-Ten Books | These ten books have informed my practice for over a decade. 
-<br><br>
-Services | See how clinical coaching differs.
-<br><br>
+I work with college students and young professionals. They’re often counselors, educators, executives, creatives, and developers. They tend to think deeply about thinking, teaching, and learning.
+
+Many worry about their relationships, behaviors, moods, attention, and thoughts.
+
+Talking might help. It disrupts our loops by facilitating self-surprise.
+
 ---
-<br><br>
-Drop me an email: <br>
-jeremiah at gmail dot com.
+
+[Drop me an email](mailto:jeremiahhackett.lcsw@gmail.com).
