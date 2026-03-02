@@ -1,3 +1,8 @@
+--- 
+layout: base.njk
+title: Home
+---
+
 *Clinically Informed Consulting*
 
 I work with college students and young professionals. They’re often counselors, educators, executives, creatives, and developers. They tend to think deeply about thinking, teaching, and learning.
