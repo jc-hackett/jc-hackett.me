@@ -1,8 +1,11 @@
 *Clinically Informed Consulting*
-<br>I work with college students and young professionals.
-<br>They're often counselors, educators, executives, creatives, developers. They frequently think a lot about thinking, teaching and learning. They're often worried about their own moods, attention, or even sanity.
-<br>Your time with your consultant is your time to surprise yourself. It is a time that should be cultivated for that purpose and that purpose alone.
----
-[Drop me an email](mailto:jeremiahhackett.lcsw@gmail.com).
 
-#uncomitted
+I work with college students and young professionals. They’re often counselors, educators, executives, creatives, and developers. They tend to think deeply about thinking, teaching, and learning.
+
+Many worry about their relationships, behaviors, moods, attention, and thoughts.
+
+Talking might help. It disrupts our loops by facilitating self-surprise.
+
+---
+
+[Drop me an email](mailto:jeremiahhackett.lcsw@gmail.com).
