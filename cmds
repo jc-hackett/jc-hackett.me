@@ -1,0 +1,14 @@
+npx @11ty/eleventy --serve --port=8080
+
+combine text:
+
+    Get-ChildItem -Recurse -File |
+    Where-Object {
+        $_.FullName -notmatch '\\(node_modules|\.git|_site|dist|build)\\' -and
+        $_.Extension -match '^\.(md|txt|html|css|js|ts|json|yml|yaml|xml)$'
+    } |
+    ForEach-Object {
+        Add-Content combined.txt "===== $($_.FullName) ====="
+        Get-Content -Raw $_.FullName | Add-Content combined.txt
+        Add-Content combined.txt "`r`n"
+    }

@@ -1,26 +1,36 @@
 ---
-title: Jeremiah Hackett
+title: JEREMIAH HACKETT
 layout: base.njk
 ---
-# JEREMIAH HACKETT
 <div class="sub">  
 Clinical Social Worker  
 </div>
 <hr class="blue-rule">
 
-I work with college students and young professionals. My clients are typically concerned about their relationships, behaviors, moods, focus, or thinking.
+I work with college students and young professionals. My clients are typically concerned about their relationships, thoughts, behaviors and moods.
 
-For some, talking helps a great deal. It gives people a chance to speak without reservation or fear of recrimination. This is a rare opportunity, and if utilized it can disrupt the rigid ways of thinking that don't always work for us. It can also facilitate a more compassionate and humanizing view of oneself and others.
+For some, talking can really help. 
 
-In addition to clinical consulting services (coaching), I also offer insurance-reimbursed psychotherapy in Maine and (soon) New York. You can schedule a consultation here, or [drop me an email](mailto:jeremiahhackett.lcsw@gmail.com) if you have any questions.
+Being compassionately interviewed gives us a chance to speak without hesitation or fear of recrimination. There are not many places where we can be fully (and safely) candid. 
+
+This timeless process disrupts rigid and unhelpful ways of thinking. It facilitates a more compassionate and humanizing view of oneself—and others.
+
+<hr class="blue-rule">
+
+I offer psychotherapy services in Maine and (soon) New York. I contract with Headway to accept a handful of insurances.
+
+I also offer clinical consulting services (or 'coaching').
+
+Curious if we might be a good fit? You can [schedule a consultation](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2LsK9T_GyHfWpNiXv0D6zAUe-hNUd5YFXLWsuWb5KYDVptmngpPboSU4BraHqaoL7EXRlOSqLG), or [drop me an email](mailto:jeremiahhackett.lcsw@gmail.com) if you have any questions.
 
 <hr class="blue-rule">
 
 <details class="faq-group">
-  <summary>Frequent Questions</summary>
+  <summary>COMMON QUESTIONS</summary>
+
   <details class="faq-item">
     <summary>What insurances do you accept?</summary>
-    <p>I accept the following insurance plans:</p>
+    <p>I contract with Headway to accept a variety of insurances:</p>
     <ul>
       <li>Aetna</li>
       <li>Anthem Blue Cross and Blue Shield</li>
@@ -31,10 +41,43 @@ In addition to clinical consulting services (coaching), I also offer insurance-r
       <li>United Healthcare</li>
     </ul>
     <p>
-      To verify coverage, you can visit
-      <a href="https://care.headway.co/providers/jeremiah-hackett">
-        my Headway page
-      </a>.
+      To verify your coverage and learn how Headway works,
+      <a href="https://care.headway.co/providers/jeremiah-hackett">click here</a>.
+    </p>
+  </details>
+
+  <details class="faq-item">
+    <summary>How do coaching and psychotherapy differ?</summary>
+    <p><a href="/coaching">Click here to learn more</a>.</p>
+  </details>
+</details>
+
+<hr class="blue-rule">
+
+<details class="faq-group">
+  <summary>LEARN MORE</summary>
+
+  <details class="faq-item">
+    <summary>About Me</summary>
+
+    <figure class="about-image">
+      <img src="/images/jchackett.jpg" alt="Jeremiah Hackett portrait">
+    </figure>
+
+    <p>I was born with a natural talent for asking inconvenient questions and rearranging furniture. As a child, I spent long stretches staring thoughtfully at ceiling fans, which I now describe as “early contemplative practice.” By adolescence, I had mastered the art of nodding seriously while having absolutely no idea what was going on. This skill later became surprisingly transferable.</p>
+
+    <p>My adult life has been a steady attempt to understand how humans manage to be both wildly complex and deeply predictable. I read books with too many footnotes, take notes in margins as if someone will grade me later, and consider coffee a structural necessity. I believe in long walks, honest conversations, and the radical act of pausing before reacting.</p>
+
+    <p>Professionally, I specialize in listening—the real kind. The kind where silence does most of the heavy lifting and insight arrives disguised as a throwaway comment. I have learned that most people are braver than they think and that growth rarely announces itself with fireworks.</p>
+
+    <p>In short: I am interested in how we become who we are, how we get stuck, and how we quietly change. Also, I alphabetize things for fun.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Around the Web</summary>
+    <p>
+      2 Recent Pickt Posts<br>
+      BlueSky
     </p>
   </details>
 </details>
