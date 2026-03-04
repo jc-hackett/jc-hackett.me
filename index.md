@@ -13,15 +13,14 @@ layout: base.njk
 <p>
   Being compassionately interviewed gives us a chance to speak without hesitation or fear of recrimination.
   There aren't many spaces where we're allowed to be fully (and safely) candid with ourselves.
-  This timeless process disrupts rigid and unhelpful ways of thinking. It facilitates a more compassionate
-  and humanizing view of oneself—and others.
+  This timeless process disrupts rigid and unhelpful ways of thinking. It facilitates a more humane (and humanizing) view of ones self — and others.
 </p>
 
 <hr class="blue-rule">
 
-<p>I offer psychotherapy services in Maine and (soon) New York. I contract with Headway to accept these insurances.</p>
+<p>I offer psychotherapy services in Maine and New York. I contract with Headway to accept these insurances.</p>
 
-<p>I also offer clinical consulting services (or “coaching”) to executives, creatives, and developers. Read below to see how these services differ.</p>
+<p>I also offer clinical consulting services (or 'coaching') to executives, creatives, and developers. Explore below to see how these services differ.</p>
 
 <p>
   Curious if we might be a good fit?
