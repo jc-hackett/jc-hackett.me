@@ -9,6 +9,7 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: ".",
       includes: "_includes",
+      layouts: "_layouts",
       output: "_site",
     },
   };
