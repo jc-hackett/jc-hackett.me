@@ -1,3 +1,6 @@
+GIt Bash to generate kernel for LLM
+
+
 # Website 2 (Seed Kernel README)
 
 ## Project Rules (MUST FOLLOW)
