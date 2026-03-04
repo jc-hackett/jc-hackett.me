@@ -4,7 +4,7 @@ module.exports = function (eleventyConfig) {
 
   // Copy src/images/* to _site/images/*
   eleventyConfig.addPassthroughCopy({ "src/images": "images" });
-
+eleventyConfig.ignores.add("README.md");
   return {
     dir: {
       input: ".",
