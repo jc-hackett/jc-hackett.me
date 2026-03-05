@@ -1,5 +1,5 @@
 ---
-title: Jeremiah Hackett
+title: Jeremiah Hackett xoxo
 layout: base.njk
 ---
 
