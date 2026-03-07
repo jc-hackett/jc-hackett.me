@@ -1,0 +1,12 @@
+[
+  {
+    "key": "ctrl+shift+e",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Run Eleventy"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Rebuild Erasmus Kernel"
+  }
+]

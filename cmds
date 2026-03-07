@@ -2,4 +2,5 @@ npx @11ty/eleventy --serve --port=8080
 
 combine text:
 
-powershell -Command "Get-ChildItem -Recurse -File | Where-Object { $_.Extension -match '^\.(md|njk|html|css|js|json|toml|yaml|yml|txt)$' } | ForEach-Object { try { Get-Content $_.FullName -Raw | Out-Null } catch { $_.FullName } }"
+From Git Bash:
+chmod +x scripts/build-kernel.sh

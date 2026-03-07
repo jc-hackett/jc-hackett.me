@@ -1,0 +1,9 @@
+# ===== Erasmus Feedback 0001 =====
+Focus for the next phase: stabilize a component-driven architecture while preserving the “single-page notecard” feel. The site is moving from a hand-edited index toward reusable modules; lean into that, but keep the number of components small and intentional. Prioritize two primary modules: (1) Learn More (information disclosure + FAQ), (2) Contact Panel (action-oriented contact routes + identity links). Treat these as the site’s interactive spine.
+
+Design direction: refine the blue system into a richer, higher-contrast palette that still reads quiet and professional. Buttons should feel “pressed enamel” rather than flat; keep hover/focus states disciplined. Typography: maintain the editorial serif voice, but ensure CTA elements remain legible at small sizes. Avoid over-letterspacing on buttons; keep the elegance in weight, spacing, and shadow rather than ornament.
+
+Content direction: complete the “Coming Soon” sections with short, specific copy. Add a concise psychotherapy vs consulting distinction, a minimal policies statement (hours, cancellations, boundaries), and a short “who I’m for” paragraph to reduce ambiguity. Keep paragraphs shorter; break dense blocks into 2–4 sentence chunks for scanability.
+
+Engineering direction: keep Eleventy config boring and deterministic. Use `_includes/components/` for modules, and add per-component CSS via passthrough (no bundler yet). Ensure JS is scoped to component roots so modules can be reused without collisions. Kernel discipline: always export config, layouts, includes, and component CSS/JS; exclude build output and dependencies. Maintain a running changelog inside `_kernels/erasmus_feedback/` so the next project inherits both code and intent.
+# ===== /Erasmus Feedback 0001 =====
