@@ -1,23 +1,21 @@
 /* ===== Eleventy Config ===== */
 module.exports = function (eleventyConfig) {
-/* ===== Passthrough Copies ===== */
-eleventyConfig.addPassthroughCopy("styles.css");
-eleventyConfig.addPassthroughCopy("script.js");
-
-  // Copy src/images/* to _site/images/*
+  /* ===== Passthrough Copies ===== */
+  eleventyConfig.addPassthroughCopy({ "src/css": "css" });
+  eleventyConfig.addPassthroughCopy({ "src/script.js": "script.js" });
   eleventyConfig.addPassthroughCopy({ "src/images": "images" });
-eleventyConfig.ignores.add("README.md");
-eleventyConfig.ignores.add("_kernels/**");
-  return {
-    // Allow Nunjucks tags/includes inside Markdown (.md) files
-    markdownTemplateEngine: "njk",
 
-    // (Optional, but keeps behavior consistent if you use .html content files)
+  /* ===== Ignore Non-Site Files ===== */
+  eleventyConfig.ignores.add("README.md");
+  eleventyConfig.ignores.add("_kernels/**");
+
+  /* ===== Return Options ===== */
+  return {
+    markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
-
     dir: {
-      input: ".",
+      input: "src",
       includes: "_includes",
       layouts: "_layouts",
       output: "_site",

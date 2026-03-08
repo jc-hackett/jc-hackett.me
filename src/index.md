@@ -30,7 +30,4 @@ Counseling gives us a chance to speak without hesitation or fear of recriminatio
 <hr class="blue-rule">
 
 
-<!-- ===== Learn More Mount ===== -->
 {% include "components/learn_more.njk" %}
-<!-- ===== /Learn More Mount ===== -->
-
