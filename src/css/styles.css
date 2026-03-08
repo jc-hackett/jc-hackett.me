@@ -61,6 +61,14 @@ hr,.blue-rule{
   margin:4rem 0;
 }
 
+p a[target="_blank"]::after,
+li a[target="_blank"]::after {
+  content: "↗";
+  margin-left: 0.2em;
+  font-size: 0.8em;
+  vertical-align: text-top;
+}
+
 /* generic button (used inside panel) */
 .btn{
   display:inline-block;
@@ -87,10 +95,60 @@ summary:focus-visible{
   box-shadow:0 0 0 4px rgba(31,78,216,.25);
 }
 
+/* ===== Buttons ===== */
+
+.button{
+  display:inline-block;
+  padding:.75rem 1.7rem;
+
+  background:var(--blue);
+  color:white;
+  border:0;
+  border-radius:10px;
+
+  font:500 1.05rem/1.2 "Linux Libertine","EB Garamond",serif;
+  text-decoration:none;
+
+  cursor:pointer;
+
+  box-shadow:0 2px 6px rgba(0,0,0,.18);
+  transition:
+    background .12s ease,
+    transform .05s ease,
+    box-shadow .12s ease;
+}
+
+.button:hover{
+  background:#3656e0;
+  box-shadow:0 3px 8px rgba(0,0,0,.22);
+}
+
+.button:active{
+  transform:translateY(1px);
+  box-shadow:0 1px 4px rgba(0,0,0,.18);
+}
+
+.button:focus-visible{
+  outline:0;
+  box-shadow:0 0 0 4px rgba(31,78,216,.25);
+}
+
+button,
+.button,
+.coverage-button,
+a.button {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
-
-/* ===== Footer ===== */
-.site-footer{text-align:center;margin-top:3rem;opacity:.65}
-.site-footer p{font-size:20px}
-.site-footer .crafted{font-style:italic;max-width:250px;margin:30px auto 0}
+.site-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+}

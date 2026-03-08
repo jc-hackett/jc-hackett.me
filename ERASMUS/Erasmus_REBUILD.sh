@@ -2,7 +2,7 @@
 set -eu
 
 # ===== Erasmus Kernel Rebuild =====
-# Website-first curated export.
+# Lean export: only essential source, config, and process files.
 # Writes a markdown kernel to ERASMUS/_kernels/.
 
 # ===== Path anchors =====
@@ -34,35 +34,26 @@ fi
 
 OUT_FILE="$KERNEL_DIR/${PREFIX}${next_num}${EXT}"
 
-# ===== Curated website-first file list =====
+# ===== Curated minimal file list =====
 INCLUDE_FILES="
-$PROJECT_ROOT/index.njk
-$PROJECT_ROOT/index.md
-$PROJECT_ROOT/index.html
-$PROJECT_ROOT/index.css
-$PROJECT_ROOT/index.js
-$PROJECT_ROOT/index 2.md
-$PROJECT_ROOT/src/index.njk
 $PROJECT_ROOT/src/index.md
-$PROJECT_ROOT/src/index.html
-$PROJECT_ROOT/src/index.css
-$PROJECT_ROOT/src/index.js
-$PROJECT_ROOT/_layouts/base.njk
-$PROJECT_ROOT/_includes/components/learn_more.njk
-$PROJECT_ROOT/_includes/components/connect.njk
-$PROJECT_ROOT/styles.css
+$PROJECT_ROOT/src/_layouts/base.njk
+$PROJECT_ROOT/src/_includes/components/learn_more.njk
+$PROJECT_ROOT/src/css/styles.css
 $PROJECT_ROOT/src/css/components/learn-more.css
-$PROJECT_ROOT/src/css/components/connect.css
-$PROJECT_ROOT/script.js
+$PROJECT_ROOT/src/script.js
 $PROJECT_ROOT/package.json
 $PROJECT_ROOT/.eleventy.js
 $PROJECT_ROOT/netlify.toml
+$PROJECT_ROOT/.gitignore
+$PROJECT_ROOT/.eleventyignore
+$PROJECT_ROOT/README.md
+$PROJECT_ROOT/.vscode/tasks.json
+$PROJECT_ROOT/scripts/rebuild-kernel.cmd
+$PROJECT_ROOT/scripts/run-eleventy.cmd
 $ERASMUS_DIR/Erasmus_README.md
 $ERASMUS_DIR/Erasmus-FEEDBACK.md
 $ERASMUS_DIR/Erasmus_REBUILD.sh
-$PROJECT_ROOT/README.md
-$PROJECT_ROOT/.eleventyignore
-$PROJECT_ROOT/.gitignore
 "
 
 # ===== Header =====
@@ -101,12 +92,10 @@ append_file() {
   [ -n "$file" ] || return 0
 
   rel="$(rel_path "$file")"
-
   already_written "$rel" && return 0
 
   if [ -f "$file" ]; then
     echo "Exporting: $rel"
-
     {
       echo
       echo "## FILE: $rel"
@@ -117,38 +106,23 @@ append_file() {
       echo '```'
       echo
     } >> "$OUT_FILE"
-
-    mark_written "$rel"
   else
     echo "Missing:   $rel"
-
     {
       echo
       echo "## MISSING: $rel"
       echo
     } >> "$OUT_FILE"
-
-    mark_written "$rel"
   fi
+
+  mark_written "$rel"
 }
 
-# ===== 1. Curated file list =====
+# ===== 1. Curated file list only =====
 printf "%s\n" "$INCLUDE_FILES" | while IFS= read -r file; do
   [ -n "$file" ] || continue
   append_file "$file"
 done
-
-# ===== 2. Auto-include any other files with 'index' in the name =====
-find "$PROJECT_ROOT" -type f ! -path "$PROJECT_ROOT/node_modules/*" ! -path "$PROJECT_ROOT/_site/*" ! -path "$PROJECT_ROOT/.git/*" \
-  | sort \
-  | while IFS= read -r file; do
-      base="$(basename "$file")"
-      case "$base" in
-        *index*)
-          append_file "$file"
-          ;;
-      esac
-    done
 
 # ===== Footer =====
 {
