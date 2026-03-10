@@ -8,16 +8,18 @@ layout: base.njk
 <hr class="blue-rule">
 
 <p>
-I work with college students and young professionals. My clients are typically men and are often concerned about their relationships, behaviors, thoughts, and moods. Many are tradesmen, servicemen, developers, or designers.
+I work with male college students and young professionals. My clients are typically concerned about their relationships, behaviors or moods. Most are being forced or highly encouraged to try counseling or coaching.
 </p>
-
 <p>
-For some, talking can really help.
+For so many, <em>talking truly does help</em>.
 </p>
-
 <p>
-Counseling gives us a chance to speak without hesitation or fear of recrimination. This timeless process disrupts rigid and unhelpful ways of thinking and facilitates a more humane (and humanizing) view of oneself — and others.
+Counseling gives us a chance to speak without fear of recrimination. This timeless process disrupts rigid or uncharitable ways of thinking. It attempts to offer alternative models that can be implemented. Symptom reduction is often achieved by a more humane (and humanizing) views of both self and others.
 </p>
+<p>Explore below. Want to get started right away? Drop  your email
+
+
+
 
 <hr class="blue-rule">
 
