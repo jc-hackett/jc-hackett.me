@@ -1,140 +1,140 @@
-#!/bin/sh
-set -eu
+LOG_FILE="$KERNEL_DIR/kernel-build.log"
 
-# ===== Erasmus Kernel Rebuild =====
-# Lean export: only essential source, config, and process files.
-# Writes a markdown kernel to ERASMUS/_kernels/.
+exec > >(tee -a "$LOG_FILE") 2>&1
 
-# ===== Path anchors =====
-SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
-ERASMUS_DIR="$SCRIPT_DIR"
-PROJECT_ROOT="$(CDPATH= cd -- "$ERASMUS_DIR/.." && pwd)"
+echo "--------------------------------"
+echo "Kernel build started: $(date)"
+echo "Project root: $PROJECT_ROOT"
+echo "Log file: $LOG_FILE"
+echo "--------------------------------"
+
+#!/usr/bin/env bash
+set -euo pipefail
+trap 'echo "ERROR on line $LINENO"; exit 1' ERR
+
+MAX_BYTES=50000
+
+PROJECT_ROOT="$(pwd)"
+ERASMUS_DIR="$PROJECT_ROOT/ERASMUS"
 KERNEL_DIR="$ERASMUS_DIR/_kernels"
-
-# ===== Output config =====
-PREFIX="kernel-"
-EXT=".md"
 
 mkdir -p "$KERNEL_DIR"
 
-# ===== Next kernel number =====
-last_num=""
-for f in "$KERNEL_DIR"/${PREFIX}[0-9][0-9][0-9][0-9]${EXT}; do
-  [ -f "$f" ] || continue
-  b="$(basename "$f")"
-  n="$(printf "%s" "$b" | sed -n "s/^${PREFIX}\([0-9][0-9][0-9][0-9]\)${EXT}$/\1/p")"
-  [ -n "$n" ] && last_num="$n"
-done
+OUT_FILE="$KERNEL_DIR/kernel-$(date +%Y%m%d-%H%M%S).md"
 
-if [ -z "${last_num:-}" ]; then
-  next_num="0001"
-else
-  next_num="$(printf "%04d" $((10#$last_num + 1)))"
-fi
+echo "Starting Erasmus kernel build..."
+echo "Writing kernel to $OUT_FILE"
 
-OUT_FILE="$KERNEL_DIR/${PREFIX}${next_num}${EXT}"
-
-# ===== Curated minimal file list =====
-INCLUDE_FILES="
-$PROJECT_ROOT/src/index.md
-$PROJECT_ROOT/src/_layouts/base.njk
-$PROJECT_ROOT/src/_includes/components/learn_more.njk
-$PROJECT_ROOT/src/css/styles.css
-$PROJECT_ROOT/src/css/components/learn-more.css
-$PROJECT_ROOT/src/script.js
-$PROJECT_ROOT/package.json
-$PROJECT_ROOT/.eleventy.js
-$PROJECT_ROOT/netlify.toml
-$PROJECT_ROOT/.gitignore
-$PROJECT_ROOT/.eleventyignore
-$PROJECT_ROOT/README.md
-$PROJECT_ROOT/.vscode/tasks.json
-$PROJECT_ROOT/scripts/rebuild-kernel.cmd
-$PROJECT_ROOT/scripts/run-eleventy.cmd
-$ERASMUS_DIR/Erasmus_README.md
-$ERASMUS_DIR/Erasmus-FEEDBACK.md
-$ERASMUS_DIR/Erasmus_REBUILD.sh
-"
-
-# ===== Header =====
-{
-  echo "# ${PREFIX}${next_num} — Erasmus Project Snapshot"
-  echo
-  echo "Generated: $(date -u +"%Y-%m-%dT%H:%M:%SZ" 2>/dev/null || date)"
-  echo
-  echo "Project root: $PROJECT_ROOT"
-  echo "Erasmus dir: $ERASMUS_DIR"
-  echo
-} > "$OUT_FILE"
-
-written_list="$(mktemp)"
-trap 'rm -f "$written_list"' EXIT
-
-already_written() {
-  grep -Fqx "$1" "$written_list" 2>/dev/null
+current_size() {
+  wc -c < "$OUT_FILE" | tr -d ' '
 }
 
-mark_written() {
-  printf "%s\n" "$1" >> "$written_list"
+can_fit() {
+  local add_bytes="$1"
+  local now
+  now="$(current_size)"
+  [ $((now + add_bytes)) -le "$MAX_BYTES" ]
 }
 
-rel_path() {
-  file="$1"
-  case "$file" in
-    "$PROJECT_ROOT"/*) printf "%s\n" "${file#"$PROJECT_ROOT"/}" ;;
-    "$ERASMUS_DIR"/*)  printf "ERASMUS/%s\n" "${file#"$ERASMUS_DIR"/}" ;;
-    *) printf "%s\n" "$file" ;;
-  esac
+append_text() {
+  local text="$1"
+  local bytes
+  bytes=$(printf "%s" "$text" | wc -c | tr -d ' ')
+  if can_fit "$bytes"; then
+    printf "%s" "$text" >> "$OUT_FILE"
+    return 0
+  fi
+  return 1
 }
 
 append_file() {
-  file="$1"
-  [ -n "$file" ] || return 0
+  local file="$1"
+  local rel="${file#$PROJECT_ROOT/}"
+  local tmp
+  tmp="$(mktemp)"
 
-  rel="$(rel_path "$file")"
-  already_written "$rel" && return 0
+  {
+    printf "## FILE: %s\n\n" "$rel"
+    printf '```\n'
+    sed 's/\r$//' "$file"
+    printf '\n```\n\n'
+  } > "$tmp"
 
-  if [ -f "$file" ]; then
-    echo "Exporting: $rel"
-    {
-      echo
-      echo "## FILE: $rel"
-      echo
-      echo '```'
-      sed 's/\r$//' "$file"
-      echo
-      echo '```'
-      echo
-    } >> "$OUT_FILE"
+  local bytes
+  bytes=$(wc -c < "$tmp" | tr -d ' ')
+
+  if can_fit "$bytes"; then
+    echo "Exporting $rel"
+    cat "$tmp" >> "$OUT_FILE"
   else
-    echo "Missing:   $rel"
-    {
-      echo
-      echo "## MISSING: $rel"
-      echo
-    } >> "$OUT_FILE"
+    echo "Skipping $rel (size cap)"
+    append_text "## SKIPPED: $rel\n\nSkipped to keep kernel under ${MAX_BYTES} bytes.\n\n"
   fi
 
-  mark_written "$rel"
+  rm -f "$tmp"
 }
 
-# ===== 1. Curated file list only =====
-printf "%s\n" "$INCLUDE_FILES" | while IFS= read -r file; do
-  [ -n "$file" ] || continue
-  append_file "$file"
+is_text_file() {
+  case "$1" in
+    *.md|*.njk|*.html|*.css|*.js|*.json|*.toml|*.yml|*.yaml|*.sh|*.cmd|*.txt)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
+{
+  echo "# Erasmus Kernel Snapshot"
+  echo "Generated: $(date)"
+  echo "Project root: $PROJECT_ROOT"
+  echo
+  echo "Max size: ${MAX_BYTES} bytes"
+  echo
+} > "$OUT_FILE"
+
+append_text "## DIRECTORY STRUCTURE\n\n\`\`\`\n"
+
+find . \
+  -path "./node_modules" -prune -o \
+  -path "./_site" -prune -o \
+  -path "./.git" -prune -o \
+  -path "./ERASMUS/_kernels" -prune -o \
+  -print | sed 's#^\./##' | while IFS= read -r line; do
+    append_text "$line"$'\n' || break
+  done
+
+append_text "\`\`\`\n\n"
+
+echo "Exporting src..."
+find "$PROJECT_ROOT/src" -type f | sort | while IFS= read -r file; do
+  is_text_file "$file" && append_file "$file"
 done
 
-# ===== Footer =====
-{
-  echo
-  echo "---"
-  echo
-  echo "Kernel complete: $(basename "$OUT_FILE")"
-  echo
-} >> "$OUT_FILE"
+echo "Exporting ERASMUS..."
+find "$PROJECT_ROOT/ERASMUS" \
+  -path "$PROJECT_ROOT/ERASMUS/_kernels" -prune -o \
+  -type f -print | sort | while IFS= read -r file; do
+    is_text_file "$file" && append_file "$file"
+done
+
+echo "Exporting root config..."
+for file in \
+  "$PROJECT_ROOT/.eleventy.js" \
+  "$PROJECT_ROOT/.eleventyignore" \
+  "$PROJECT_ROOT/netlify.toml" \
+  "$PROJECT_ROOT/package.json" \
+  "$PROJECT_ROOT/package-lock.json" \
+  "$PROJECT_ROOT/.gitignore" \
+  "$PROJECT_ROOT/README.md"
+do
+  [ -f "$file" ] && append_file "$file"
+done
+
+append_text "---\n\nKernel complete: $(basename "$OUT_FILE")\n"
 
 echo
-echo "========================================"
-echo "Kernel complete"
-echo "Wrote: $OUT_FILE"
-echo "========================================"
+echo "Kernel written:"
+echo "$OUT_FILE"
+echo "Size: $(current_size) bytes"

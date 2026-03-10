@@ -1,0 +1,19 @@
+{# ===== Component: Disclosure Group ===== #}
+
+<section class="disclosure-group" aria-label="{{ ariaLabel or title }}">
+  <details>
+    <summary class="disclosure-header">{{ title }}</summary>
+
+    {% for item in items %}
+      <details class="disclosure-item">
+        <summary>{{ item.title }}</summary>
+
+        <div class="content-block">
+          {{ item.content | safe }}
+        </div>
+      </details>
+    {% endfor %}
+  </details>
+</section>
+
+{# ===== /Component: Disclosure Group ===== #}

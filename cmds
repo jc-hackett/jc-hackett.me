@@ -1,6 +1,0 @@
-npx @11ty/eleventy --serve --port=8080
-
-combine text:
-
-From Git Bash:
-chmod +x scripts/build-kernel.sh
