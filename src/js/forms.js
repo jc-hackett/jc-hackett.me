@@ -95,4 +95,4 @@ function loadCalEmbed() {
 
     loadCalEmbed();
   });
-})();
+})(); 

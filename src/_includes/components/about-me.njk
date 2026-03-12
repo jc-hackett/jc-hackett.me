@@ -1,19 +1,62 @@
-{# ===== Component: About-Me ===== #}
+<section class="disclosure-group" aria-label="About Me">
 
-{% set items = [
-  {
-    title: "Get in Touch",
-    content: "<p>Contact details, email, phone, or inquiry instructions can go here.</p>"
-  },
-  {
-    title: "Availability",
-    content: "<p>Scheduling, office format, or response-time notes can go here.</p>"
-  }
-] %}
+<details>
 
-{% set title = "ABOUT ME" %}
-{% set ariaLabel = "About-me" %}
+<summary class="disclosure-header">
+ABOUT ME
+</summary>
 
-{% include "components/disclosure-group.njk" %}
+<div class="content-block">
 
-{# ===== /Component: About-me ===== #}
+<details class="disclosure-item">
+<summary>My Story</summary>
+<div class="content-block">
+
+<hr class="rule dotted-blue-rule">
+
+<p>
+I grew up in rural Maine in the 1980s, splitting my time between long bike rides and my Nintendo. From an early age I knew I wanted to teach. I’ve always enjoyed helping people make sense of complicated ideas and turning difficult problems into something manageable.
+</p>
+
+<p>
+I studied writing and philosophy as an undergraduate and began my career teaching high school English and history.
+</p>
+
+<p>
+I earned my master’s in social work in 2012 and worked clinically in community and residential settings, in addition to supervising case managers. I entered private practice ten years ago.
+</p>
+
+<p>
+Four years ago, I began focusing my work on the psychological development and sociocultural demands facing men.
+</p>
+
+<p>
+Outside of work, I still bike and play games, though my tastes have evolved. I have a long-standing interest in personal knowledgebase technology and digital self-determination, including projects built on the AT Protocol and the broader question of users’ rights online.
+</p>
+
+<p>
+Lately I’ve been playing <em>Assault Android Cactus</em>.
+</p>
+
+</div>
+</details>
+
+
+<details class="disclosure-item">
+<summary>Follow My Antics</summary>
+<div class="content-block">
+
+<p>
+Links, writing, or other online activity can go here.
+</p>
+
+</div>
+</details>
+
+<hr class="blue-rule">
+
+</div>
+
+</details>
+
+</section>

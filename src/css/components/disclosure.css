@@ -18,13 +18,31 @@
 }
 
 .disclosure-group > details[open] .content-block {
-  padding: 1.5rem 0.25rem 0 0.25rem;
+  padding: 0
+}
+
+.disclosure-group > details[open] > summary {
+  background: var(--ink);
+  color: #ffffff;
+  border-color: var(--ink);
+
+  box-shadow:
+    0 0 0 5px rgba(31,78,216,0.05),
+    0 12px 34px rgba(0,0,0,0.06);
 }
 
 /* hide default disclosure arrows */
 summary {
   list-style: none;
   cursor: pointer;
+}
+
+summary,
+.button,
+.menu-option,
+nav,
+label {
+  font-family: var(--ui-font);
 }
 
 summary::-webkit-details-marker {
@@ -59,7 +77,13 @@ summary::-webkit-details-marker {
   margin-bottom: 1rem;
 }
 
+/* ===== Open Disclosure Header ===== */
 
+.disclosure-group > details[open] > summary {
+  background: var(--blue);
+  color: #ffffff;
+  border-color: var(--blue);
+}
 
 /* nested disclosure trigger */
 .disclosure-item > summary {
@@ -69,9 +93,9 @@ summary::-webkit-details-marker {
 /* divider under title when open */
 .disclosure-item[open] > summary {
   display: block;
-  border-bottom: 2px dotted blue;
-  padding-bottom: 0.5rem;
-  margin-bottom: 0.75rem;
+  /* border-bottom: 2px dotted blue;
+  padding-bottom: 0.5rem; */
+  /* margin-bottom: 0.75rem; */
   transition: margin-bottom 140ms ease;
 }
 

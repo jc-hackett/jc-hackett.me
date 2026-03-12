@@ -17,17 +17,15 @@
   });
 })();
 
-/* ===== Disclosure Focus / Reposition ===== */
+/* ===== Top-Level Header Focus ===== */
 document.addEventListener("DOMContentLoaded", () => {
   const topDetails = document.querySelectorAll(".disclosure-group > details");
-  const subDetails = document.querySelectorAll(".disclosure-item");
+  const firstRule = document.querySelector("#services-reset");
 
-  let suppressSubFocus = false;
-
-  function scrollToElement(el) {
+  function scrollToTarget(el) {
     if (!el) return;
 
-    const top = el.getBoundingClientRect().top + window.scrollY - 24;
+    const top = el.getBoundingClientRect().top + window.scrollY - 18;
 
     window.scrollTo({
       top,
@@ -36,35 +34,66 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   topDetails.forEach((details) => {
-    details.addEventListener("toggle", () => {
-      suppressSubFocus = true;
+    const summary = details.querySelector(":scope > summary");
+    if (!summary) return;
 
-      setTimeout(() => {
-        const summary = details.querySelector(":scope > summary");
-        scrollToElement(summary);
-        suppressSubFocus = false;
-      }, 0);
-    });
-  });
+    summary.addEventListener("click", () => {
+      const willOpen = !details.open;
 
-  subDetails.forEach((details) => {
-    details.addEventListener("toggle", () => {
-      if (suppressSubFocus) return;
-
-      if (details.open) {
-        const summary = details.querySelector(":scope > summary");
-        scrollToElement(summary);
-      } else {
-        const topSummary = details
-          .closest(".disclosure-group")
-          ?.querySelector(":scope > details > summary");
-
-        scrollToElement(topSummary);
-      }
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (willOpen) {
+            scrollToTarget(summary);
+          } else if (firstRule) {
+            scrollToTarget(firstRule);
+          }
+        });
+      });
     });
   });
 });
 
+/* ===== Services Intro / Hidden Reset ===== */
+document.addEventListener("DOMContentLoaded", () => {
+  const intro = document.querySelector("#services-intro");
+  const servicesTop = document.querySelector('section[aria-label="Services"] > details');
+  const subItems = document.querySelectorAll(
+    'section[aria-label="Services"] details.disclosure-item'
+  );
+  const reset = document.querySelector("#services-reset");
+
+  if (!intro || !servicesTop || !reset) return;
+
+  let introLockedHidden = true;
+
+  servicesTop.addEventListener("toggle", () => {
+    subItems.forEach((item) => {
+      item.open = false;
+    });
+
+    if (servicesTop.open) {
+      intro.style.display = "none";
+    } else if (!introLockedHidden) {
+      intro.style.display = "block";
+    }
+  });
+
+  reset.addEventListener("click", () => {
+    if (introLockedHidden) {
+      introLockedHidden = false;
+      intro.style.display = "block";
+    } else {
+      introLockedHidden = true;
+      intro.style.display = "none";
+    }
+
+    servicesTop.open = false;
+
+    subItems.forEach((item) => {
+      item.open = false;
+    });
+  });
+});
 /* ===== Services Intro / Hidden Reset ===== */
 document.addEventListener("DOMContentLoaded", () => {
   const intro = document.querySelector("#services-intro");
