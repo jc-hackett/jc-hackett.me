@@ -6,6 +6,9 @@ layout: base.njk
 <div class="sub">CLINICAL SOCIAL WORKER</div>
 
 <hr class="blue-rule">
+<button id="services-reset-toggle" class="services-lines-toggle" type="button" aria-controls="services-intro" aria-label="Show service introduction" title="Show service introduction">
+	<span class="visually-hidden">Show service introduction</span>
+</button>
 <div id="services-intro">
 
 <p>
