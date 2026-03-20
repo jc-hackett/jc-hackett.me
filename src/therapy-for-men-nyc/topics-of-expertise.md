@@ -1,13 +1,24 @@
 ---
 layout: base.njk
-title: Topics of Expertise
+title: Mandated to Therapy?
+permalink: /therapy-for-men-nyc/
 ---
 
 <hr class="blue-rule">
 
 
-When things start to unravel, clarity is the first casualty. Through a process of compassionate interviewing — structured, non-judgmental dialogue — we examine what's driving the situation and what needs to change. The goal isn't just to feel better. It's to develop the kind of accountability that holds, restore a sense of equilibrium, and build a clear vision of what forward looks like.
+Talking can help you with your case, but it can also help <em>you</em>. 
 
-{% include "components/gambling-specialty.njk" %}
-{% include "components/divorce-specialty.njk" %}
-{% include "components/court-specialty.njk" %}
+
+If you're being sent to therapy after a DUI, a domestic violence charge, a custody fight, or another legal problem, the counseling process can help. When we talk, we sort out what lies ahead of us, make realistic plans, and keep a clear record of the work.
+
+I offer <b>LLM-Assisted Psychotherapy</b>, which supports timely documentation, clearer timelines, and accurate records of what we discuss and what you are doing to move forward. Used carefully and within my scope, it helps keep the process organized, specific, and easier to show when someone else needs a clear account of the work.
+<hr class="blue-rule">
+
+{% include "components/divorce-therapy.njk" %}
+{% include "components/court-therapy.njk" %}
+{% include "components/problematic-behaviors.njk" %}
+
+<div id="contact-me-wrapper" hidden>
+{% include "components/contact-me.njk" %}
+</div>

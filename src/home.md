@@ -1,6 +1,7 @@
 ---
 title: Jeremiah Hackett
 layout: base.njk
+permalink: /
 ---
 
 <div class="sub">CLINICAL SOCIAL WORKER</div>

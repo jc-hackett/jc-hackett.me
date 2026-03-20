@@ -3,14 +3,29 @@ console.log("JS loaded");
 
 /* ===== Schedule Consultation Button ===== */
 document.addEventListener("DOMContentLoaded", () => {
-  const scheduleLink = document.querySelector("#schedule-consultation");
+  const scheduleLinks = document.querySelectorAll('a[href="#contact-me"]');
   const contactDetails = document.querySelector("#contact-me");
 
-  if (!scheduleLink || !contactDetails) return;
+  if (!scheduleLinks.length || !contactDetails) return;
 
-  scheduleLink.addEventListener("click", function () {
+  function openContact(e) {
+    e.preventDefault();
+    const wrapper = document.getElementById("contact-me-wrapper");
+    if (wrapper) wrapper.hidden = false;
     contactDetails.open = true;
-  });
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const emailInput = contactDetails.querySelector("input[type='email']");
+        const target = emailInput || contactDetails.querySelector("summary");
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "center" });
+          target.focus({ preventScroll: true });
+        }
+      });
+    });
+  }
+
+  scheduleLinks.forEach((link) => link.addEventListener("click", openContact));
 });
 
 /* ===== Menu Controller ===== */

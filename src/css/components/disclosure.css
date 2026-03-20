@@ -10,6 +10,7 @@
 
   text-align: center;
   cursor: pointer;
+  font-weight: 700;
 
   background: #ffffff;
   border: 1px solid #e5e5e5;
@@ -28,7 +29,7 @@
   border-color: var(--ink);
 
   box-shadow:
-    0 0 0 5px rgba(31,78,216,0.05),
+    0 0 0 5px rgba(0,0,0,0.05),
     0 12px 34px rgba(0,0,0,0.06);
 }
 
@@ -39,11 +40,10 @@ summary {
 }
 
 summary,
-.button,
 .menu-option,
 nav,
 label {
-  font-family: var(--ui-font);
+  font-family: var(--journal-font);
 }
 
 summary::-webkit-details-marker {
@@ -51,21 +51,23 @@ summary::-webkit-details-marker {
 }
 
 /* spacing between disclosure sections */
-.disclosure-group + .disclosure-group {
+.disclosure-group + .disclosure-group,
+.disclosure-group + #contact-me-wrapper,
+#contact-me-wrapper + .disclosure-group {
   margin-top: 2rem;
 }
 
 .disclosure-item {
   background: #ffffff;
-  border: 1px solid rgba(31,78,216,0.12);
+  border: 1px solid rgba(0,0,0,0.14);
   border-radius: 6px;
 
   padding: 1.25rem;
   margin-top: 1.2rem;
 
   box-shadow:
-    0 0 0 3px rgba(31,78,216,0.03),
-    0 8px 18px rgba(31,78,216,0.12);
+    0 0 0 3px rgba(0,0,0,0.03),
+    0 8px 18px rgba(0,0,0,0.10);
 }
 
 /* top-level disclosure trigger */
@@ -81,14 +83,33 @@ summary::-webkit-details-marker {
 /* ===== Open Disclosure Header ===== */
 
 .disclosure-group > details[open] > summary {
-  background: var(--blue);
+  background: var(--brand-blue);
   color: #ffffff;
-  border-color: var(--blue);
+  border-color: var(--brand-blue);
 }
 
 /* nested disclosure trigger */
 .disclosure-item > summary {
   cursor: pointer;
+  font-family: var(--journal-font);
+  font-variant-caps: normal;
+  text-transform: none;
+  letter-spacing: normal;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--brand-blue);
+}
+
+.disclosure-item .content-block,
+.disclosure-item .content-block p,
+.disclosure-item .content-block li,
+.disclosure-item .content-block a:not(.button) {
+  font-family: var(--journal-font);
+  font-variant-caps: normal;
+  text-transform: none;
+  letter-spacing: normal;
+  font-style: normal;
+  color: var(--ink);
 }
 
 /* divider under title when open */

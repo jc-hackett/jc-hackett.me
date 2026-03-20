@@ -1,0 +1,56 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+#services-reset {
+  position: relative;
+}
+
+.services-lines-toggle {
+  display: none;
+  width: 1.85rem;
+  height: 1.1rem;
+  margin: -1.46rem auto -1.32rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 140ms ease;
+}
+
+.services-lines-toggle::before {
+  content: "";
+  display: block;
+  width: 0.52rem;
+  height: 0.52rem;
+  margin: 0.2rem auto 0;
+  border-right: 2px solid var(--brand-blue);
+  border-bottom: 2px solid var(--brand-blue);
+  transform: rotate(-135deg);
+}
+
+.services-lines-toggle.is-collapsed {
+  display: block;
+}
+
+.services-lines-toggle.is-collapsed:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.services-lines-toggle.is-collapsed:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.55);
+  outline-offset: 2px;
+}
+
+.services-learn-more {
+  margin-top: 1em;
+}
