@@ -46,13 +46,15 @@
 </footer>
   </div>
 
-<form name="consultation" method="POST" action="/" netlify hidden>
+<form name="consultation" method="POST" action="/" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="consultation">
   <input type="email" name="email">
   <textarea name="message"></textarea>
   <input type="checkbox" name="subscribe-newsletter">
 </form>
 
-<form name="newsletter" method="POST" action="/" netlify hidden>
+<form name="newsletter" method="POST" action="/" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="newsletter">
   <input type="email" name="email">
   <input type="checkbox" name="subscribe-newsletter">
   <input type="text" name="source">
