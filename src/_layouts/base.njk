@@ -46,6 +46,19 @@
 </footer>
   </div>
 
+<form name="consultation" method="POST" action="/" netlify hidden>
+  <input type="email" name="email">
+  <textarea name="message"></textarea>
+  <input type="checkbox" name="subscribe-newsletter">
+</form>
+
+<form name="newsletter" method="POST" action="/" netlify hidden>
+  <input type="email" name="email">
+  <input type="checkbox" name="subscribe-newsletter">
+  <input type="text" name="source">
+  <textarea name="message"></textarea>
+</form>
+
 <script defer src="/js/base.js"></script>
 <script defer src="/js/disclosures.js"></script>
 {% if page.url == "/" %}
