@@ -11,8 +11,14 @@ Drop me an email using the form below. I'll respond to you in 24 hours.
 </p>
 
 <div class="consult-capture">
-  <form name="consultation" method="POST" action="/" data-netlify="true" class="consult-form">
+  <form name="consultation" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" class="consult-form">
     <input type="hidden" name="form-name" value="consultation">
+
+    <p hidden>
+      <label>
+        Do not fill this out: <input name="bot-field">
+      </label>
+    </p>
 
     <p>
       <input type="email" name="email" placeholder="Your Email (required)" required>

@@ -66,8 +66,14 @@ Follow me on BlueSky
 <div class="newsletter-capture">
 <p class="newsletter-intro"><b>Subscribe to my newsletter</b></p>
 
-<form name="newsletter" method="POST" action="/" data-netlify="true" class="consult-form">
+<form name="newsletter" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" class="consult-form">
 <input type="hidden" name="form-name" value="newsletter">
+
+<p hidden>
+<label>
+Do not fill this out: <input name="bot-field">
+</label>
+</p>
 
 <p>
 <input type="email" name="email" placeholder="Your Email (required)" required>
