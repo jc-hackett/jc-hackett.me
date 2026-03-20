@@ -99,7 +99,7 @@ async function postNetlifyForm(data) {
     e.preventDefault();
 
     try {
-      const wantsNewsletter = form.querySelector('input[name="newsletter"]')?.checked;
+      const wantsNewsletter = form.querySelector('input[name="subscribe-newsletter"]')?.checked;
       const email = form.querySelector('input[name="email"]')?.value?.trim();
       const message = form.querySelector('textarea[name="message"]')?.value?.trim() || "";
 
@@ -109,7 +109,7 @@ async function postNetlifyForm(data) {
         await postNetlifyForm({
           "form-name": "newsletter",
           email,
-          newsletter: "on",
+          subscribe: "on",
           source: "consultation",
           message
         });
