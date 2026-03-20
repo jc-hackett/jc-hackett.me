@@ -2,6 +2,9 @@
   command = "npm ci && npm run build"
   publish = "_site"
 
+[functions]
+  directory = "netlify/functions"
+
 [build.environment]
   NPM_FLAGS = "--include=dev"
   NODE_VERSION = "20"
