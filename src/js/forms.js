@@ -105,19 +105,18 @@ async function postNetlifyForm(data) {
 
       if (!email) throw new Error("Email is required");
 
+      await postNetlifyForm({
+        "form-name": "consultation",
+        email,
+        message
+      });
+
       if (wantsNewsletter && email) {
         await postNetlifyForm({
           "form-name": "newsletter",
           email,
           subscribe: "on",
-          source: "consultation",
-          message
-        });
-      } else {
-        await postNetlifyForm({
-          "form-name": "consultation",
-          email,
-          message
+          source: "consultation"
         });
       }
 
