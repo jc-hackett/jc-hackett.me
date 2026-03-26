@@ -7,6 +7,15 @@
 
   <title>{{ title or "Page Title" }}</title>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5GCWW0Y848"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5GCWW0Y848');
+  </script>
+
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/components/disclosure.css">
 {% if page.url == "/" %}
