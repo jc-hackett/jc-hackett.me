@@ -17,6 +17,22 @@
   border-radius: 3px;
 }
 
+a.disclosure-header {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+a.bluesky-follow {
+  background: #0085ff;
+  border-color: #0085ff;
+  color: #ffffff;
+}
+
+a.bluesky-follow:hover {
+  background: #006edb;
+  border-color: #006edb;
+}
+
 .disclosure-group > details[open] .content-block {
   padding: 0
 }

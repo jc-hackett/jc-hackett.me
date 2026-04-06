@@ -12,19 +12,29 @@ homeTagline: Clinical Social Worker
 </button>
 <div id="services-intro">
 
-<p>
-I work with college-aged men and young professionals. My clients are typically concerned about their relationships, behaviors or moods. Most are being encouraged by loved ones to talk to someone. Many are facing legal problems or financial problems connected to a pattern of behaviors.</p>
-<p>
-Talking really can help.
-</p>
-<p>
-Speaking without censorship to a compassionate, interested listener is a timeless process. It helps us see and think differently. It disrupts rigid and uncharitable ways of thinking. 
+Hello.
 
-It can help bring us relief.</p></div>
-<p>‎</p>
-{% include "components/services.njk" %}
+I offer counseling and consulting sessions to young men navigating strain in their lives. Many are dealing with relationship difficulties, patterns of behavior that feel out of control, or shifts in mood that are beginning to carry real costs. Some are facing legal or financial consequences tied to those patterns, while others are in recovery.
 
-{% include "components/about-me.njk" %}
+Speaking openly, candidly and authentically to a focused, compassionate listener is a durable, time-tested process. It creates distance from automatic reactions, clarifies what’s actually happening, and interrupts rigid or self-defeating ways of thinking.
+
+For many, that process brings real relief.</div>
+
+<hr class="blue-rule">
+
+For residents of New York & Maine, I offer individual psychotherapy services. My hourly rate is $200 per clinical hour, and I provide a superbill for insurance reimbursement. 
+
+<hr class="rule dotted-blue-rule">
+
+For those with non-psychiatric needs, I offer consulting services. This service differs from psychotherapy in a handful of key ways. 
+
+Message me using the form below for a brochure on the differences. 
+
+<hr class="rule dotted-blue-rule">
+
+*All of my services are provided online using Google Meet.*
+<p>‎ </p>
 
 {% include "components/contact-me.njk" %}
 
+<a class="disclosure-header bluesky-follow" href="https://bsky.app/profile/jchackett.bsky.social" target="_blank" rel="noopener noreferrer">Follow me on Bluesky</a>
