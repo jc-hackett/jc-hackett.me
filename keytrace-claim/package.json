@@ -1,0 +1,8 @@
+{
+  "name": "@jchackett/keytrace-claim",
+  "version": "0.0.1",
+  "did": "did:plc:ilna2lgvj5wnhmj234kfdhu6",
+  "publishConfig": {
+    "access": "public"
+  }
+}

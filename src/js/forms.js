@@ -141,7 +141,7 @@ async function postNetlifyForm(data) {
       success.hidden = false;
 
       if (header) {
-        header.textContent = "SCHEDULE A CONSULT";
+        header.textContent = "Schedule a Consult";
       }
 
       loadCalEmbed({

@@ -12,23 +12,28 @@ homeTagline: Clinical Social Worker
 </button>
 <div id="services-intro">
 
-Hello.
+Hello. I'm Jeremiah, and I work with men ages 20 to 40. 
 
-I offer counseling and consulting sessions to young men navigating strain in their lives. Many are dealing with relationship difficulties, patterns of behavior that feel out of control, or shifts in mood that are beginning to carry real costs. Some are facing legal or financial consequences tied to those patterns, while others are in recovery.
+Are you looking to talk to someone about your frustration and anger? Are you looking to avoid the consequences you see mounting up? Are those around you concerned?
 
-Speaking openly, candidly and authentically to a focused, compassionate listener is a durable, time-tested process. It creates distance from automatic reactions, clarifies what’s actually happening, and interrupts rigid or self-defeating ways of thinking.
+Consider reaching out. Counseling can help.
 
-For many, that process brings real relief.</div>
+If you’re skeptical, that’s okay. I often find that skepticism is something we can work with.
+
+Many men fall into patterns shaped by suppression and avoidance. These patterns tend to persist because they’re effective in the short term.
+
+Through dialogue, interview, and review, these patterns can be named, understood, and communicated more clearly—to yourself and to others. They become something you can actually work with.
+
+Therapy remains a reliable way to examine and shift these patterns over time.
+</div>
 
 <hr class="blue-rule">
 
-For residents of New York & Maine, I offer individual psychotherapy services. My hourly rate is $200 per clinical hour, and I provide a superbill for insurance reimbursement. 
+For residents of New York & Maine, I offer **individual psychotherapy services**. My hourly rate is $200, and I provide a superbill for insurance reimbursement. 
 
 <hr class="rule dotted-blue-rule">
 
-For those with non-psychiatric needs, I offer consulting services. This service differs from psychotherapy in a handful of key ways. 
-
-Message me using the form below for a brochure on the differences. 
+In addition to traditional talk therapy, I offer **individual and small team consulting services**. This service differs from psychotherapy in a handful of key ways. Message me using the form below for a brochure on the differences. 
 
 <hr class="rule dotted-blue-rule">
 
@@ -38,3 +43,7 @@ Message me using the form below for a brochure on the differences.
 {% include "components/contact-me.njk" %}
 
 <a class="disclosure-header bluesky-follow" href="https://bsky.app/profile/jchackett.bsky.social" target="_blank" rel="noopener noreferrer">Follow me on Bluesky</a>
+
+<hr class="rule dotted-blue-rule">
+
+</div>
